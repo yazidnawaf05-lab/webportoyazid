@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Website Responsif</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="header">
+    <h1 class="logo">MyWeb</h1>
+    <button class="menu-btn" id="menu-btn">☰</button>
+    <nav class="navbar" id="navbar">
+      <a href="#home">Home</a>
+      <a href="#about">Tentang</a>
+      <a href="#contact">Kontak</a>
+    </nav>
+  </header>
+
+  <section id="home" class="hero">
+    <h2>Selamat Datang di Website Responsif</h2>
+    <p>Website ini menyesuaikan tampilan otomatis di semua ukuran layar.</p>
+    <a href="#about" class="btn">Pelajari Lebih Lanjut</a>
+  </section>
+
+  <section id="about" class="about">
+    <h2>Tentang Kami</h2>
+    <p>Kami membuat website yang bisa digunakan di semua perangkat.</p>
+    <div class="grid">
+      <div class="card">Desain Modern</div>
+      <div class="card">Responsif</div>
+      <div class="card">Mudah Digunakan</div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Kontak Kami</h2>
+    <form>
+      <input type="text" placeholder="Nama" required />
+      <input type="email" placeholder="Email" required />
+      <textarea placeholder="Pesan" required></textarea>
+      <button type="submit" class="btn">Kirim</button>
+    </form>
+  </section>
+
+  <footer class="footer">
+    <p>© 2025 MyWeb. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

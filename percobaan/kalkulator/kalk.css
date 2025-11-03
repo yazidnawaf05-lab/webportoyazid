@@ -1,0 +1,68 @@
+body{
+    background-color:rgb(255, 244, 92);
+}
+#card-kalkulator{
+    background-color:rgb(255, 254, 173);
+    width: 450px;
+    height: 390px;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column ;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+#angka1{
+    margin: 10px;
+    height: 40px;
+    width: 300px;
+    border-radius: 10px;
+    border: 2px solid darkgreen;
+}
+#angka2{
+    height: 40px;
+    width: 300px;
+    border-radius: 10px;
+    border: 2px solid darkgreen;
+}
+#sesuatu{
+    height: 30px;
+    width: 30px;
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    margin-right: 60px;
+   
+}
+#card-kalkulator p{
+    font-size: 40px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-top: 20px;
+    color: darkgreen;
+}
+.sesuatu button{    
+    margin-top: 55px;
+    margin-right: 10px;
+    background-color:darkseagreen;
+    
+   
+}
+.sesuatu button{
+    width: 50px;
+    height: 50px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgb(0, 0, 0, 0.1);
+    margin-left: 30px;
+    margin-left: 20px;
+}
+.sesuatu button:hover{
+    background-color: rgb(0, 255, 255);
+}
+.sesuatu button:hover{
+    transform: translateY(-10px);
+    transition: 0.5s;
+}
+
+

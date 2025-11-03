@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Portofolio — Nama Anda</title>
+    <style>
+      :root {
+        --bg: #0f1724;
+        --card: #0b1220;
+        --muted: #9aa4b2;
+        --accent: #6ee7b7;
+        --glass: rgba(255, 255, 255, 0.04);
+        --maxw: 1100px;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+          Roboto, "Helvetica Neue", Arial;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        background: linear-gradient(180deg, #071025 0%, var(--bg) 100%);
+        color: #e6eef6;
+      }
+      .wrap {
+        max-width: var(--maxw);
+        margin: 32px auto;
+        padding: 24px;
+      }
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .logo {
+        width: 48px;
+        height: 48px;
+        border-radius: 10px;
+        background: linear-gradient(135deg, var(--accent), #60a5fa);
+        display: grid;
+        place-items: center;
+        font-weight: 700;
+        color: #06202a;
+      }
+      nav a {
+        color: var(--muted);
+        text-decoration: none;
+        margin-left: 18px;
+        font-weight: 600;
+      }
+      .hero {
+        display: grid;
+        grid-template-columns: 1fr 380px;
+        gap: 28px;
+        margin-top: 28px;
+        align-items: center;
+      }
+      .card {
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.02),
+          transparent
+        );
+        border-radius: 14px;
+        padding: 22px;
+        box-shadow: 0 6px 18px rgba(2, 6, 23, 0.6);
+      }
+      h1 {
+        margin: 0;
+        font-size: 28px;
+      }
+      p.lead {
+        color: var(--muted);
+        margin-top: 10px;
+        line-height: 1.5;
+      }
+      .cta {
+        margin-top: 16px;
+      }
+      .btn {
+        display: inline-block;
+        padding: 10px 16px;
+        border-radius: 10px;
+        background: var(--accent);
+        color: #052026;
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      .profile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .avatar {
+        width: 200px;
+        height: 200px;
+        border-radius: 18px;
+        background: linear-gradient(135deg, #0ea5a9, #7c3aed);
+        display: grid;
+        place-items: center;
+        font-size: 48px;
+        font-weight: 800;
+        color: #021018;
+      }
+      .stats {
+        display: flex;
+        gap: 12px;
+        margin-top: 10px;
+      }
+      .stat {
+        background: var(--glass);
+        padding: 8px 12px;
+        border-radius: 8px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .projects {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+        margin-top: 28px;
+      }
+      .proj {
+        padding: 16px;
+        border-radius: 12px;
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.02),
+          transparent
+        );
+      }
+      .proj h3 {
+        margin: 0 0 8px 0;
+      }
+      .proj p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .contact {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-top: 28px;
+      }
+      form input,
+      form textarea {
+        width: 100%;
+        padding: 10px;
+        border-radius: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.04);
+        background: transparent;
+        color: inherit;
+      }
+
+      footer {
+        margin-top: 36px;
+        color: var(--muted);
+        font-size: 13px;
+        text-align: center;
+      }
+
+      /* responsive */
+      @media (max-width: 900px) {
+        .hero {
+          grid-template-columns: 1fr;
+        }
+        .projects {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .profile .avatar {
+          width: 160px;
+          height: 160px;
+        }
+      }
+      @media (max-width: 560px) {
+        nav a {
+          display: none;
+        }
+        .projects {
+          grid-template-columns: 1fr;
+        }
+        .contact {
+          grid-template-columns: 1fr;
+        }
+        .wrap {
+          padding: 16px;
+          margin: 18px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header>
+        <div class="brand">
+          <div class="logo">NY</div>
+          <div>
+            <div style="font-weight: 700">Nama Anda</div>
+            <div style="font-size: 13px; color: var(--muted)">
+              Designer • Frontend Developer
+            </div>
+          </div>
+        </div>
+        <nav>
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </header>
+
+      <section class="hero">
+        <div class="card">
+          <h1>Hai — saya Nama Anda</h1>
+          <p class="lead">
+            Saya membuat tampilan web yang bersih, cepat, dan responsif. Fokus
+            pada UI/UX, performance, dan aksesibilitas. Berikut beberapa proyek
+            yang pernah saya kerjakan.
+          </p>
+          <div class="cta"><a class="btn" href="#contact">Hubungi saya</a></div>
+
+          <div
+            id="projects"
+            class="projects"
+            aria-label="Proyek saya"
+            style="margin-top: 20px"
+          >
+            <article class="proj">
+              <h3>Website Toko</h3>
+              <p>Desain toko online responsif + integrasi pembayaran.</p>
+            </article>
+            <article class="proj">
+              <h3>Landing Page App</h3>
+              <p>Landing page performa tinggi untuk aplikasi mobile.</p>
+            </article>
+            <article class="proj">
+              <h3>Dashboard Admin</h3>
+              <p>Dashboard data visualization dan laporan.</p>
+            </article>
+          </div>
+        </div>
+
+        <aside class="profile card">
+          <div class="avatar">NY</div>
+          <h3 style="margin-top: 12px">yazid</h3>
+          <div style="color: var(--muted); font-size: 14px">
+            Frontend Developer
+          </div>
+          <div class="stats" style="margin-top: 12px">
+            <div class="stat">3+ Tahun</div>
+            <div class="stat">10+ Proyek</div>
+          </div>
+        </aside>
+      </section>
+
+      <section id="about" class="card" style="margin-top: 24px">
+        <h2>Tentang saya</h2>
+        <p style="color: var(--muted); margin-top: 8px">
+          Saya fokus membuat antarmuka yang mudah digunakan dan cepat. Tools:
+          HTML, CSS, JavaScript, Figma. Saya terbuka untuk kerja remote dan
+          proyek freelance.
+        </p>
+      </section>
+
+      <section id="contact" style="margin-top: 18px">
+        <h2 style="margin-bottom: 8px">Kontak</h2>
+        <div class="contact">
+          <div class="card">
+            <p style="color: var(--muted)">
+              Email: <strong>yazidnawaf05@email.com</strong>
+            </p>
+            <p style="color: var(--muted)">Lokasi: Indonesia</p>
+          </div>
+          <form
+            class="card"
+            onsubmit="event.preventDefault();alert('Form kirim simulasi — hubungi lewat email di sebelah kiri')"
+          >
+            <input placeholder="Nama" required />
+            <input
+              placeholder="Email atau WhatsApp"
+              required
+              style="margin-top: 8px"
+            />
+            <textarea
+              placeholder="Pesan"
+              rows="4"
+              style="margin-top: 8px"
+            ></textarea>
+            <div style="margin-top: 8px">
+              <button class="btn" type="submit">Kirim</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <footer>
+        © <span id="year"></span> Nama Anda — Dibuat dengan HTML & CSS
+      </footer>
+    </div>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

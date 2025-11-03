@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kalkulator Sederhana</title>
+    <style>
+      :root {
+        --bg: #000000;
+        --card: #40567a;
+        --glass: rgba(255, 255, 255, 0.06);
+        --accent: linear-gradient(135deg, #0055ffcc);
+        --btn: #ffffff;
+        --muted: rgb(255, 255, 255);
+        --shadow: 0 8px 30px rgb(255, 255, 255);
+        --radius: 16px;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+          Roboto, "Helvetica Neue", Arial;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        display: grid;
+        place-items: center;
+        min-height: 100vh;
+        background: radial-gradient(
+            1200px 600px at 10% 10%,
+            rgba(99, 102, 241, 0.12),
+            transparent
+          ),
+          radial-gradient(
+            900px 400px at 90% 90%,
+            rgba(6, 182, 212, 0.08),
+            transparent
+          ),
+          var(--bg);
+        color: #ffffff;
+      }
+
+      .calculator {
+        width: 340px;
+        max-width: 92vw;
+        padding: 20px;
+        border-radius: var(--radius);
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.473),
+          rgba(255, 255, 255, 0.02)
+        );
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(8px) saturate(120%);
+        border: 1px solid rgb(255, 255, 255);
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 14px;
+      }
+      .logo {
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+        background: var(--accent);
+        display: grid;
+        place-items: center;
+        font-weight: 700;
+        box-shadow: 0 6px 18px rgb(255, 255, 255);
+      }
+      .logo span {
+        font-size: 18px;
+      }
+      .title {
+        line-height: 1;
+      }
+      .title h1 {
+        margin: 0;
+        font-size: 16px;
+        letter-spacing: 0.2px;
+      }
+      .title p {
+        margin: 0;
+        font-size: 12px;
+        color: var(--muted);
+      }
+
+      .screen {
+        background: linear-gradient(
+          180deg,
+          rgb(255, 255, 255),
+          rgba(255, 255, 255, 0)
+        );
+        padding: 14px;
+        border-radius: 12px;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        margin-bottom: 18px;
+        min-height: 84px;
+        align-items: flex-end;
+        justify-content: center;
+        border: 1px solid rgb(255, 255, 255);
+      }
+      .expression {
+        font-size: 18px;
+        font-weight: 600;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        max-width: 100%;
+      }
+      .result {
+        font-size: 28px;
+        font-weight: 600;
+        word-break: break-all;
+      }
+
+      .keys {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+      }
+      button.key {
+        height: 56px;
+        border-radius: 12px;
+        border: 0;
+        background: linear-gradient(
+          180deg,
+          rgb(255, 255, 255),
+          rgba(255, 255, 255, 0)
+        );
+        box-shadow: 0 6px 12px rgb(255, 255, 255);
+        font-size: 16px;
+        cursor: pointer;
+        transition: transform 0.08s ease, box-shadow 0.12s ease;
+      }
+      button.key:active {
+        transform: translateY(2px);
+      }
+
+      button.op {
+        background: var(--glass);
+        border: 1px solid rgb(255, 255, 255);
+      }
+      button.equals {
+        grid-column: span 2;
+        background: var(--accent);
+        color: #ffffff;
+        font-weight: 700;
+      }
+      button.span2 {
+        grid-column: span 2;
+      }
+
+      .muted {
+        color: var(--muted);
+        font-size: 13px;
+        margin-top: 12px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="calculator">
+      <div class="brand">
+        <div class="title">
+          <h1>Kalkulator Sederhana</h1>
+          </div>
+      </div>
+
+      <div class="screen">
+        <div class="expression" id="expression">0</div>
+        <div class="result" id="result">0</div>
+      </div>
+
+      <div class="keys">
+        <button class="key op" data-action="clear">C</button>
+        <button class="key op" data-action="del">Backspace</button>
+        <button class="key op" data-value="(">(</button>
+        <button class="key op" data-value=")">)</button>
+
+        <button class="key" data-value="7">7</button>
+        <button class="key" data-value="8">8</button>
+        <button class="key" data-value="9">9</button>
+        <button class="key op" data-value="/">÷</button>
+
+        <button class="key" data-value="4">4</button>
+        <button class="key" data-value="5">5</button>
+        <button class="key" data-value="6">6</button>
+        <button class="key op" data-value="*">*</button>
+
+        <button class="key" data-value="1">1</button>
+        <button class="key" data-value="2">2</button>
+        <button class="key" data-value="3">3</button>
+        <button class="key op" data-value="-">-</button>
+
+        <button class="key span2" data-value="0">0</button>
+        <button class="key" data-value=".">.</button>
+        <button class="key equals" data-action="equals">=</button>
+      </div>
+
+      <div class="muted">Klik tombol untuk menghitung</div>
+    </main>
+
+    <script>
+      // === Versi JavaScript Sederhana ===
+      const exprEl = document.getElementById("expression");
+      const resultEl = document.getElementById("result");
+      const keys = document.querySelectorAll(".key");
+
+      let expr = "";
+
+      function updateDisplay() {
+        exprEl.textContent = expr || "0";
+      }
+
+      function appendValue(v) {
+        expr += v;
+        updateDisplay();
+      }
+
+      function clearAll() {
+        expr = "";
+        resultEl.textContent = "0";
+        updateDisplay();
+      }
+
+      function deleteLast() {
+        expr = expr.slice(0, -1);
+        updateDisplay();
+      }
+
+      function calculate() {
+        try {
+          const val = eval(expr);
+          resultEl.textContent = val ?? "0";
+          expr = val.toString();
+        } catch {
+          resultEl.textContent = "Error";
+        }
+      }
+
+      keys.forEach((btn) => {
+        const v = btn.dataset.value;
+        const a = btn.dataset.action;
+
+        btn.addEventListener("click", () => {
+          if (a === "clear") return clearAll();
+          if (a === "del") return deleteLast();
+          if (a === "equals") return calculate();
+          if (v) return appendValue(v);
+        });
+      });
+
+      updateDisplay();
+    </script>
+  </body>
+</html>
