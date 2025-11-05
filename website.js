@@ -4,7 +4,7 @@ let menu = document.querySelectorAll(".menu ul li a");
 
 function ubahWarnaHeader(){
     if (window.scrollY > 0){
-         header.style.backgroundColor = "#535d77ff";
+         header.style.backgroundColor = "#4070f4";
     header.style.borderBottom = "none";
 
     title.style.color = "white";
@@ -15,7 +15,7 @@ function ubahWarnaHeader(){
     
     }else{
         header.style.backgroundColor = "transparent";
-        header.style.borderBottom = "1px solid rgba(141, 141, 141, 1)";
+        header.style.borderBottom = "1px solid rgb(237, 236, 236)";
 
          title.style.color = "black";
     menu.forEach(function(item){
@@ -50,11 +50,13 @@ let aboutlink = document.querySelector('.menu ul li a[href="#about"]');
 let herolink = document.querySelector('.menu ul li a[href="#hero"]');
 let skilllink = document.querySelector('.menu ul li a[href="#skill"]');
 let workslink = document.querySelector('.menu ul li a[href="#works"]');
+let kotaklink = document.querySelector('.menu ul li a[href="#kotak"]');
 
 let aboutsection = document.getElementById("about");
 let herosection = document.getElementById("hero");
 let skillsection = document.getElementById("skill");
 let workssection = document.getElementById("works");
+let kotaksection = document.getElementById("kotak");
 
 function scrollToAbout(event){
     event.preventDefault();
@@ -73,30 +75,44 @@ function scrollToworks(event){
     event.preventDefault();
     workssection.scrollIntoView({behavior: "smooth"});
 }
+function scrollTokotak(event){
+    event.preventDefault();
+    kotaksection.scrollIntoView({behavior: "smooth"});
+}
 aboutlink.onclick = scrollToAbout
 herolink.onclick = scrollTohero
 skilllink.onclick = scrollToskill
 workslink.onclick = scrollToworks
+kotaklink.onclick = scrollTokotak
 
 
-let mediaScreen = window.matchMedia("(max-width : 768px)");
-function handieScreenCange(e){
-    if(e.matches){
-        menuBars.addEventListener("click",function(){
-            sideBarsResponsive.style.display = "block"
-            menuBars.atyle.display = "none"
-        });
-        closeSidebar.addEventListener("click",function(){
-            sideBarsResponsive.style.display = "none"
-            menuBars.atyle.display = "block"
-        });
-    }else {
-        sideBarsResponsive.style.display = " none";
-        menuBars.style.display = "none";
-    }
+let menuBars = document.getElementById("menu-bars");
+let sidebarResponsive = document.getElementById("sidebar-responsive");
+let closeSidebarButton = document.getElementById("close-sidebar");
+
+let resolusiscreen = window.matchMedia("(max-width: 780px)");
+
+function responsivescreen(screen){
+if(screen.matches){
+
+    menuBars.style.display= "block";
+    menuBars.addEventListener("click",function(){
+     sidebarResponsive.style.display = "block";
+    menuBars.style.display = "none";
+    });
+    closeSidebarButton.addEventListener("click" ,function(){
+     sidebarResponsive.style.display = "none";
+    menuBars.style.display = "block";
+    });
+    }else{
+    sidebarResponsive.style.display = "none";
+    menuBars.style.display = "none";
+    }  
 }
+responsivescreen(resolusiscreen);
+resolusiscreen.addEventListener("change", responsivescreen)
 
-mediaScreen.addEventListener("change",hadleScreenChange);
-hadleScreenChange(mediaScreen);
+
+
 
 

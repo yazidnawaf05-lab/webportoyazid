@@ -53,10 +53,10 @@ body{
 
 }
 .hero-content p span{
-    color: #535d77ff;
+    color: #4070f4;
 }
 .hero-content button{
-background-color:#535d77ff ;
+background-color:#4070f4 ;
 color: white;
 border: none;
 padding: 15px 60px;
@@ -70,7 +70,7 @@ font-size: 30px;
     
 }
 .hero-image{
-background-color:#535d77ff ;
+background-color:#4070f4 ;
 padding: 20px;
 border-radius: 100px 100px 100px 100px;
 border: none;
@@ -108,7 +108,7 @@ border: none;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    background-color: #535d77ff;
+    background-color: #4070f4;
     height: 100vh;
     gap: 100px;
    
@@ -125,17 +125,23 @@ border: none;
     background-color: white;
     border-radius: 50px;
     box-shadow: 0 4px 8px rgba(0,0, 0, 0.1);
-    margin-left: 75px;
+    margin: 20px;
+    margin-left: 50px;
    
 }
 .about-box img{
     height: 200px;
     width: 200px;
     border-radius: 50px;
+    
 }
 .about-box:hover{
-    transform: translateY(-10px);
+    transform: scale(1.1);
     transition: 0.5s;
+}
+.about-box a{
+    margin-left: 75Px;
+    color: black;
 }
 .About-content{
     display: flex;
@@ -169,7 +175,7 @@ border: none;
     width: 200px;
     text-align: center;
     margin-left: 50px;
-    color: #535d77ff;
+    color: #4070f4;
     border: none;
     padding: 10px px;
      cursor: pointer;
@@ -177,8 +183,8 @@ border-radius: 5px;
 font-size: 30px;
 }
 .button:hover{
-    background-color: rgb(0, 0, 0);
-    transition: 1.3s;
+    background-color: pink;
+    transition: 1.1s;
 }
 .skill{
       display: flex;
@@ -198,13 +204,13 @@ font-size: 30px;
 .skill-box{
      width: 200px;
     height: 200px;
-    background-color: #535d77ff;
+    background-color: #4070f4;
     border-radius: 50px;
     margin-left: 50px;
     margin-right: 50px;
 }
 .skill-content-section {
-    color: #535d77ff;
+    color: #4070f4;
     font-size: 40px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   
@@ -217,7 +223,7 @@ font-size: 30px;
     border-radius: 50px;
 }
 .skill-box:hover{
-    transform: translateY(-10px);
+    transform: translateY(-14px);
     transition: 0.5s;
 
 }
@@ -242,7 +248,7 @@ font-size: 30px;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    color:rgb(255, 255, 255);
+    color:pink;
     font-size: 24px;
     display: none;
 }
@@ -251,7 +257,7 @@ font-size: 30px;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    background-color: #535d77ff;
+    background-color: #4070f4;
     height: 100vh;
     gap: 100px;
    
@@ -263,12 +269,12 @@ font-size: 30px;
     margin-top: 50px;
 }
 .works-box{
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
     background-color: white;
-    border-radius: 25px;
+    border-radius: 50px;
     box-shadow: 0 4px 8px rgba(0,0, 0, 0.1);
-    margin-left: 50px;      
+    margin-left: 50px;  
    
 }
 .works-box:hover{
@@ -276,31 +282,53 @@ font-size: 30px;
     transition: 0.5s;
 }
 .works-box img{
-    height: 150px;
-    width: 150px;
-    border-radius: 25px;
+    height: 200px;
+    width: 200px;
+    border-radius: 50px;
 }
 .works P{
     font-size: 20PX;
     color: white;
 }
+
+.kotak{
+  display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 120px;
+    background-color: #ffffff;
+    height: 100px;
+}
+.kotak p{
+    margin-right: 150vh;
+}
+.menu-bars{
+display: none;
+}
+.title-responsive{
+    display: none;
+}
 .sidebar-responsive{
-    position: fixed;
-    top: 0;
-    left: 0;
     width: 250px;
     height: 100%;
+    position:fixed ;
+    top: 0;
+    left: 0;
     background-color: white;
-    box-shadow: 2px 0 5px black;
+    box-shadow: 2px 0 5px rgba(0, 0,0, 0,1);
     padding: 20px;
+    display: none;
+    flex-direction: column;
+    gap: 30px;
+
 }
 .sidebar-responsive ul{
     list-style: none;
 
 }
 .sidebar-responsive ul li{
-    display: inline-block;
-    margin-right: 20px;
+    margin-bottom: 20px;
 }
 .sidebar-responsive ul li a{
     text-decoration: none;
@@ -312,3 +340,39 @@ font-size: 30px;
     transition: o.5s;
     
 }
+@media screen and (max-width:768px){
+.title{
+    display: none;
+}
+.title-responsive{
+    display: block;
+    font-size: 20px;
+    font-weight: 600;
+}
+.menu{
+    display: none;
+}
+.menu-bars{
+    display: block;
+    font-size: 24px;
+    cursor:pointer;
+}
+}
+
+@media screen and (max-width: 480px){
+
+  .hero{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    gap: 50px;
+    margin-left: 20px;
+
+  }
+  .hero-content p{
+    font-size: 40px;
+  }
+  
+}
+    
